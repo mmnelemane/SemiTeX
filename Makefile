@@ -8,7 +8,7 @@ main := seminar
 bibtexstyles := IEEEtran.bst
 classes := IEEEtran.cls
 # TeXMeta location
-metaurl := "https://github.com/uniba-ktr/TeXMeta.git"
+metaurl := "https://github.com/mmnelemane/TeXMeta.git"
 
 MAKE_FILE := $(meta)/Makefile
 
