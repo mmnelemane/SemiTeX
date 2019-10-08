@@ -10,7 +10,8 @@
 % zentrale Layout-Angaben und Befehle
 %===============================================================================
 \newcommand\meta{./meta}
-\newcommand\images{./meta/images}
+\newcommand\images{./images}
+\newcommand\content{./content}
 
 \input{\meta/config/commands}
 
@@ -59,23 +60,23 @@
 %
 % hier einzelne Kapitel mit \input{Kapitel-File} einf\"{u}gen
 %
-\input{\meta/Content/introduction}
-\input{\meta/Content/architecture_overview}
-\input{\meta/Content/mec_architecture}
-\input{\meta/Content/nfv_architecture}
-\input{\meta/Content/nfv_mec_architecture}
-\input{\meta/Content/requirements}
-\input{\meta/Content/enabling_technologies}
-\input{\meta/Content/nfvi}
-\input{\meta/Content/virtualization}
-\input{\meta/Content/containerization}
-\input{\meta/Content/virt_vs_containers}
-\input{\meta/Content/opensource}
-\input{\meta/Content/iaas_openstack}
-\input{\meta/Content/openstack_edge}
-\input{\meta/Content/iaas_kubernetes}
-\input{\meta/Content/k8s_edge}
-\input{\meta/Content/conclusion}
+\input{./content/introduction}
+\input{./content/architecture_overview}
+\input{./content/mec_architecture}
+\input{./content/nfv_architecture}
+\input{./content/nfv_mec_architecture}
+\input{./content/requirements}
+\input{./content/enabling_technologies}
+\input{./content/nfvi}
+\input{./content/virtualization}
+\input{./content/containerization}
+\input{./content/virt_vs_containers}
+\input{./content/opensource}
+\input{./content/iaas_openstack}
+\input{./content/openstack_edge}
+\input{./content/iaas_kubernetes}
+\input{./content/k8s_edge}
+\input{./content/conclusion}
 %
 %===============================================================================
 % LATEX-Dokument: Literaturverzeichnis
@@ -88,7 +89,7 @@
 
 \bibliographystyle{IEEEtran}
 % argument is your BibTeX string definitions and bibliography database(s)
-\bibliography{\meta/Literature/reference}
+\bibliography{./literature/reference}
 % Nutzung von Bibtex:
 % hier den bib-file einbinden
 %

@@ -1,0 +1,38 @@
+\section{Requirements for NFV}
+
+The variety of use-cases that NFV claims to support and the nature of the functions that run as VNFs demands for certain requirements to be met. ETSI has drafted several requirements and these can be classified under 4 categories. These requirements are laid out taking into consideration both the functioning of the NFV system as well as the Service Level Agreements (guarantees) that such a system is obligated to provide its consumers.
+	
+\subsection{Hardware requirements}
+
+ETSI specifies considerations while choosing or adapting the telecommunications for NFV workloads. The environments include Central Office, Access Node, Transport Node and Data Center. Since majority of the NFV functions are expected to be implemented in the Data Center, the hardware requirements focuses on the requirements for the Data Center. One of the key goals is the ability to run Network Functions on COTS (Commercial Off The Shelf) hardware without vendor-locking and licensing issues. The second key consideration is interoperability so that workloads can be moved to different hardware automatically without performance or functionality impact. This is also necessary to achieve high level of resiliency. 
+
+	
+\subsection{Virtualization requirements}
+	
+The network functions are expected to be run in one or more virtual resources. There are two competing technologies that help process the computation workloads for the VNFs – Virtualization and Containers. The nature of computation and traffic that is handled by NFV demands very high and deterministic performance. Its not sufficient to provide high speed but also real-time capability with reduced jitter. Jitter is defined as the deviation in the promised latency (the response time for the data processing unit).  
+	
+Operating the NFV system requires several actions to be performed on the virtualized resources (Virtual Machines or Containers). Hence these requirements dictate the metrics expected on various operations like below:
+
+
+\begin{enumerate}
+    \item Inter-VM communication
+    \item VM to host 
+    \item VM boot time
+    \item VM migration across hosts
+    \item Security
+\end{enumerate}
+
+
+Since the virtualization is responsible for processing the NFV workloads, it is important to understand the classification of Workloads as outlined by ETSI in Figure [] below.
+
+The introduction of Software Defined Networking technology in the mix, the network functions are separated into Control Plane and Data Plane. While the control plane is responsible for computing the destination, routing, tunneling and other control functions of the data transfer process, the data plane focuses on the forwarding of the packets as instructed by the control plane. The interface between the control and data plane are well defined either through standardized protocols or APIs. The details of the SDN solution and its role in NFV is discussed in a later section. 
+
+	
+\subsection{Resiliency requirements}
+
+Telecommunication functions demand high resiliency against various threats including disaster, failures, loss of communication, errors and overloading of resources. The resiliency requirements define measures that could be taken at each level including hardware failures, virtualization, IaaS and the VNF\@. The management and orchestration functions provide external modules that support such high-resiliency requirements. IaaS solutions have in-built solutions and external or third party supported integrations that provide high availability and resiliency. Specific components to realize this requirement for various IaaS solutions are discussed in later sections.
+
+	
+\subsection{Management and Orchestration requirements}
+
+Apart from resiliency of the Virtual Network Functions, the Orchestration module is also responsible for many other functions for effective life cycle management of the VNFs. Some of these include provisioning, monitoring, fault detection and recovery, policy management and service chaining/clustering as required by the specific services.
