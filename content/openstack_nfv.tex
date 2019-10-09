@@ -19,31 +19,25 @@ The network architecture of the OpenStack uses the separation concept proposed b
 		
     \begin{itemize}
         \item Linux Bridge
-            \begin{flushleft}
-            This is the traditional Linux networking implementation provided by linux-utils and provides a simple interface to provide multiple interfaces on a single NIC. The linux bridge is inherently slow and the limits on the number of interfaces make it non-viable for scalability. A typical connectivity in a Linux bridge network is as in the figure below [5].
-            \end{flushleft}
-            
-            \begin{figure}
-		\centering
-		\includegraphics[width=0.9\textwidth]{linux_bridge_provider}
-		\label{fig:figure15}
-		\caption{OpenStack Network with Linux Bridge Provider Network}
-	    \end{figure}
-				
+            This is the traditional Linux networking implementation provided by linux-utils and provides a simple interface to provide multiple interfaces on a single NIC\@. The linux bridge is inherently slow and the limits on the number of interfaces make it non-viable for scalability. A typical connectivity in a Linux bridge network is as in the figure below [5].
+            \begin{figure}[h!]
+		        \centering
+  		        \includegraphics[width=0.9\textwidth]{linux_bridge_provider}
+  		        \label{fig:figure12}
+		        \caption{OpenStack Network with Linux Bridge Provider Network}
+	        \end{figure}
         \item OpenvSwitch
             OpenvSwitch provides a virtual switching mechanism and is based on OpenFlow Protocol. 
-	
-            \begin{figure}
-		\centering
+            \begin{figure}[h!]
+		        \centering
                 \includegraphics[width=0.9\textwidth]{ovs_provider}
-		\label{fig:figure16}
-		\caption{OpenStack Network with OpenVswitch as the Provider Network}
-	    \end{figure}
-				
-            The multiple levels of bridging in the OpenvSwitch based architecture creates performance bottlenecks that hinder the use-cases for NFV. Hence advanced data plane acceleration technologies should be utilized. The key data plane acceleration methods are listed below.
+		        \label{fig:figure16}
+		        \caption{OpenStack Network with OpenVswitch as the Provider Network}
+	        \end{figure}
+            The multiple levels of bridging in the OpenvSwitch based architecture creates performance bottlenecks that hinder the use-cases for NFV\@. Hence advanced data plane acceleration technologies should be utilized. The key data plane acceleration methods are listed below.
 	
         \item DPDK - Data Plane Development Kit
-	\item VPP - Vector Packet Processing
-	\item SRIOV - Single Root I/O Virtualization
+	    \item VPP - Vector Packet Processing
+	    \item SRIOV - Single Root I/O Virtualization
     \end{itemize}			
 \end{enumerate}
