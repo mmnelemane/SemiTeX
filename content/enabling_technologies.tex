@@ -1,6 +1,13 @@
 \section{Enabling Technologies}
 
-A range of technologies developed over several years have enabled the evolution of NFV and Edge Computing. This seections briefly describes and compares the technologies that led to the development of MEC and its parallel technology NFV.
+A range of technologies developed over several years have enabled the evolution of NFV and Edge Computing. These technologies can be grouped among four planes of computing. This model is applicable to MEC as well as the related technology called NFV.
+
+\begin{figure}[h!]
+	\centering
+    \includegraphics[width=0.7\textwidth]{planes_of_computing}
+	\label{fig:7}
+	\caption{Planes of NFV and MEC Architectures}
+\end{figure}
 
 These technologies can be grouped into 4 different planes based on their functionalities.
 
@@ -23,19 +30,20 @@ These technologies can be grouped into 4 different planes based on their functio
 	\end{itemize}
 \end{enumerate}
 
-These planes are depicted in the figure below in Figure 6.
-
-\begin{figure}
-	\centering
-        \includegraphics[width=0.7\textwidth]{planes_of_computing}
-	\label{fig:figure7}
-	\caption{Planes of NFV and MEC Architectures}
-\end{figure}
-
-The architecture also evolves into multiple business models as envisaged by the NIST Cloud Computing group
+NIST Cloud Computing group defines cloud computing \cite{nist} as "a model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources that can be rapidly provisioned and released with minimal management effort or service provider interaction". It also enumerates three service models for cloud providers. 
 
 \begin{enumerate}
     \item Infrastructure As A Service
+        The provider provides infrastructure and APIs to the consumer to provision processing, storage and network resources allowing the consumer to run arbitrary applications and services.
     \item Platform as a Service
+        The consumer can write applications using the programming languages, tools and libraries provided by the provider.
     \item Software As A Service
+        The consumer runs the application provided by the provider using a suitable interface like a web-browser or a specialized program. 
 \end{enumerate}
+
+\begin{figure}[h!]
+	\centering
+    \includegraphics[width=0.9\textwidth]{cloud_service_model}
+	\label{fig:8}
+    \caption{Service Models for Cloud Computing \protect\cite{cloudservice}}
+\end{figure}

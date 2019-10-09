@@ -5,11 +5,12 @@
 \begin{flushleft}
 Two competing technologies provide virtual resources to run NFV workloads – Virtual Machines and Containers. [1] (TABLE 1) provides a qualitative comparison of these technologies. Below table [Table 1] is an expansion of the same.
 
-\begin{tabular}{||p{4cm}|p{4cm}|p{4cm}||}
+\begin{longtable}[t!]{|p{4cm}|p{4cm}|p{4cm}|}
 	
-\hline
+\hline\hline
 \textbf{Feature} & \textbf{Virtualization} & \textbf{Containerization} \\
 \hline\hline
+\hline
 Compute Virtualization & Hardware Abstraction & Application Binary Interface \\
 \hline
 Interaction with the System & Hypervisor-based & System Calls \\
@@ -26,9 +27,9 @@ Management & Openstack, AWS, Azure, GCE & Kubernetes, Docker Swarm, Mesos \\
 \hline
 Single Independent Abstraction & VM Instances & Multi-container PODs \\
 \hline\hline
-\label{tab:tab2}
+\label{tab:tab3}
 \caption{Qualitative comparison of Virtualization and Containerization. (TABLE1 \cite[p.1663]{taleb17}}
-\end{tabular}
+\end{longtable}
 	
 \end{flushleft}
 
@@ -53,7 +54,7 @@ The comparison is made on the basis of two measures:
 \end{enumerate}
 
 
-\begin{longtable}[H]{|p{0.2\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|}
+\begin{longtable}[t!]{|p{0.2\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|}
 \hline\hline
 Workload Description&Virtual Machines&Containers\\
 \hline\hline
@@ -69,25 +70,32 @@ CPU Intensive SpecJBB&4.0&1.7\\
 Disk Intensive Filebench&4.0&2.2\\
 \hline
 \hline\hline
-\label{tab:tab3}
+\label{tab:tab4}
+\caption{Operational memory size comparison for VMs and Containers \cite{sharma16}}
 \end{longtable}
 
-\begin{tikzpicture}
+%\begin{tikzpicture}
 
-\tkzKiviatDiagram[scale=1.0,label distance=3cm,radial=10,gap=0.5,lattice=10]
-	{Kernel Compilation,MySQL Image,Memory Intensive,CPU Intensive,Disk Intensive}
-\tkzKiviatLine[ultra thick,color=green,mark=ball,mark size=4pt,
-               fill=green!20,opacity=0.5](4.0,1.68,4.0,4.0,4.0)
-\tkzKiviatLine[ultra thick,color=red,mark=ball,mark size=4pt,
-               fill=red!20,opacity=0.5](0.42,0.37,4.0,1.7,2.2)
-\tkzKiviatGrad[prefix=,unity=0.5](0.5)
+%\tkzKiviatDiagram[scale=1.0,label distance=3cm,radial=10,gap=0.5,lattice=10]
+%	{Kernel Compilation,MySQL Image,Memory Intensive,CPU Intensive,Disk Intensive}
+%\tkzKiviatLine[ultra thick,color=green,mark=ball,mark size=4pt,
+%               fill=green!20,opacity=0.5](4.0,1.68,4.0,4.0,4.0)
+%\tkzKiviatLine[ultra thick,color=red,mark=ball,mark size=4pt,
+%               fill=red!20,opacity=0.5](0.42,0.37,4.0,1.7,2.2)
+%\tkzKiviatGrad[prefix=,unity=0.5](0.5)
 
-\end{tikzpicture}
+%\end{tikzpicture}
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=10cm,height=6cm]{memory_size_vm_container}
+    \label{fig:12}
+    \caption{Comparing VMs and Containers on operational memory size, inspired from \protect\cite{mach17}}
+\end{figure}
 
-\begin{longtable}[H]{|p{0.2\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|}
+\begin{longtable}[t!]{|p{0.2\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|}
 \hline\hline
-Workload Description&Virtual Machines&Containers\\
+\textbf{Workload Description}&\textbf{Virtual Machines}&\textbf{Containers}\\
 \hline\hline
 \hline
 MySQL Image build Time(in sec)&236.2&129\\
@@ -97,18 +105,26 @@ Workload running time (Dist upgrade in sec)&391&470\\
 Workload kernel Install(in sec)&303&292\\
 \hline
 \hline\hline
-\label{tab:tab4}
+
+\label{tab:tab5}
+\caption{Running time comparison for various actions for VMs and Containers \cite{sharma16}}
 \end{longtable}
 
-\begin{tikzpicture}
+%\begin{tikzpicture}
 
-\tkzKiviatDiagram[scale=0.01,label distance=3cm,radial=10,gap=1,lattice=10]
-	{MySQL Image Build,Dist Upgrade,Kernel Install}
-\tkzKiviatLine[ultra thick,color=green,mark=ball,mark size=4pt,
-               fill=green!20,opacity=0.5](236,391,303)
-\tkzKiviatLine[ultra thick,color=red,mark=ball,mark size=4pt,
-               fill=red!20,opacity=0.5](129,470,292)
-\tkzKiviatGrad[prefix=,unity=50](50)
+%\tkzKiviatDiagram[scale=0.01,label distance=3cm,radial=10,gap=1,lattice=10]
+%	{MySQL Image Build,Dist Upgrade,Kernel Install}
+%\tkzKiviatLine[ultra thick,color=green,mark=ball,mark size=4pt,
+%               fill=green!20,opacity=0.5](236,391,303)
+%\tkzKiviatLine[ultra thick,color=red,mark=ball,mark size=4pt,
+%               fill=red!20,opacity=0.5](129,470,292)
+%\tkzKiviatGrad[prefix=,unity=50](50)
 
-\end{tikzpicture}
+%\end{tikzpicture}
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=10cm,height=6cm]{time_comparison_vm_container}
+    \label{fig:13}
+    \caption{Comparison of Running times for activities for VMs vs Containers \protect\cite{mach17}}
+\end{figure}

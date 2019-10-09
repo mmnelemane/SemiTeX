@@ -1,22 +1,20 @@
 \section{Introduction}
+The next generation telecommunication infrastructure are set to evolve towards 5G. 5G promises enhanced bandwidth and flexible services influencing multiple industries including health care, industrial automation, automotive, smart city, smart home and video gaming along with enhanced mobile communication services with live video conferencing capabilities. The foundation for these technologies is the growth of advanced infrastructure. 5G use-cases demand highly flexible and reliable service provisioning and operations. 
 
-
-The next generation applications expected to use 5G.5G promises enhanced bandwidth and next generation services influencing multiple industries including health care, industrial automation, automotive, smart city, smart home and video gaming along with enhanced mobile communication services with live video conferencing capabilities. The foundation for these technologies is the growth of advanced infrastructure. 5G application demand highly flexible and reliable service provisioning and operations. 
-
-Virtualization and Containerization technologies allow us to pack complex services in manageable entities in the form of Virtual machines and containers. The Infrastructure As a Service layer provides automation for provisioning and management of virtualized resources like virtual machines and containers on a large scale on COTS (Commercial Off The Shelf) hardware. Section [] discusses in more details about the technologies for IaaS available as open source solutions. Leveraging on the promise of infrastructure automation, the pillar technologies emerged as use-cases for IaaS solutions. The key technologies that act as enablers for 5G as also listed by ETSI include Network Functions Virtualization (NFV), Multi-access Edge Computing (MEC), Next Generation Protocols (NGP), and Millimeter Wave Transmission (MWT). This report focuses on NFV and MEC discussing the requirements, architecture and components that help meet these requirements. MWT and NGP are not in the scope of discussion for this report \cite*{taleb17}.
-
-\begin{figure}[h!]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=8cm,height=11cm]{5g_pillars}
-	\label{fig:figure1}
+	\label{fig:1}
     \caption{Pillars of 5G Technology, Inspired from \protect\cite{etsi5g}}
 \end{figure}
 
-\subsection{What is MEC?}[t!]
+Virtualization and Containerization technologies allow us to pack complex services in manageable entities in the form of Virtual machines and containers. The Infrastructure As a Service layer provides automation for provisioning and management of virtualized resources like virtual machines and containers on a large scale on COTS (Commercial Off The Shelf) hardware. Section [VII] discusses in more details about the technologies for IaaS available as open source solutions. Leveraging on the promise of infrastructure automation, the pillar technologies emerged as use-cases for IaaS solutions. The key technologies that act as enablers for 5G as also listed by ETSI include Network Functions Virtualization (NFV), Multi-access Edge Computing (MEC), Next Generation Protocols (NGP), and Millimeter Wave Transmission (MWT). This report focuses on NFV and MEC discussing the requirements, architecture and components that help meet these requirements. MWT and NGP are not in the scope of discussion for this report \cite*{taleb17}.
+
+\subsection{What is MEC?}
 
 End-user devices have limited resources for computation. Offloading the processing all the way to the cloud introduces problems like network delays, congestion and in degraded quality of service. Hence for applications that need real-time computations, edge computing provides a reasonable solution. The edge nodes are sufficiently powerful and are close to the end-user devices, hence solving both the problems.
 
-MEC (Multi-access Edge Computing) refers to the method of transferring computational complexity which was traditionally handled by server farms and Cloud onto the edge devices that directly interact with the end-user devices. The example of such an application is vehicular traffic management by using real-time data from the sensors consolidated on edge devices at major traffic junctions. A similar example is that of a smart-home environment which has several end-devices controlled by an edge router. 
+MEC (Multi-access Edge Computing) refers to the method of transferring computational complexity which was traditionally handled by server farms and Cloud onto the edge devices that directly interact with the end-user devices. The example of such an application is vehicular traffic management by using real-time data from the sensors consolidated on edge devices at major traffic junctions. A similar example is that of a smart-home environment which has several end-devices controlled by an edge router \cite{etsimec}. 
 
 \subsection{Benefits of MEC}
 MEC provides several benefits in realizing traditional and new forms of services to end-user consumers. The major benefits include:
@@ -49,12 +47,12 @@ With these benefits MEC is set to enable new verticals like video analytics, loc
 MCC or Mobile Cloud Computing can be considered as the technology of the current generation while MEC is an evolution towards the next generation. Several limitations were realized with the current generation MCC in realizing services mainly due to the distance between the user terminal which generates the data and the computational resources that reside in the cloud and use the data to produce useful results. There are also limitations in mobility, scalability and reliability of services which was caused mainly due to communication failures and expensive maintenance cycles. The below table (derived from \cite[p.1628]{mach17}) and the following Kiviat representation provides a comparison of MCC and MEC on key parameters.
 
 
-\begin{longtable}[H]{|p{0.2\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|}
+\begin{longtable}[t!]{|p{0.2\textwidth}|p{0.15\textwidth}|p{0.15\textwidth}|p{0.1\textwidth}|p{0.1\textwidth}|}
 \hline\hline
-Technical Aspect&MCC&Edge Computing&MCC Weight&MEC Weight\\
+\textbf{Technical Aspect}&\textbf{MCC}&\textbf{Edge Computing}&\textbf{MCC Weight}&\textbf{MEC Weight}\\
 \hline\hline
 \hline
-Deployment&Centralized&Distributed&Not Applicable&NotApplicable\\
+Deployment&Centralized&Distributed&Not Applicable&Not Applicable\\
 \hline
 Distance To the UE&High&Low&10.0&2.0\\
 \hline
@@ -72,13 +70,19 @@ Storage Capacity&ample&Limited&8.0&4.0\\
 \label{tab:tab1}
 \end{longtable}
 
-\begin{tikzpicture}
+\begin{figure}[h!]
+%\begin{tikzpicture}
+%\tkzKiviatDiagram[scale=0.5,label distance=3cm,radial=12,gap=1,lattice=12]
+%	{Distance To UE,Latency,Jitter,Computational Power,Storage Capacity}
+%\tkzKiviatLine[ultra thick,color=green,mark=ball,mark size=4pt,
+%               fill=green!20,opacity=.5](10.0,10.0,10.0,8.0,8.0)
+%\tkzKiviatLine[ultra thick,color=red,mark=ball,mark size=4pt,
+%               fill=red!20,opacity=.5](2.0,2.0,2.0,4.0,4.0) 
+%\tkzKiviatGrad[prefix=,unity=1](1)  
+%\end{tikzpicture}
+\includegraphics[width=10cm,height=6cm]{mcc_vs_mec}
+\label{fig:2}
+\caption{Quantative Comparison of Mobile Cloud Computing and Multi-access Edge Computing. Inspired from \protect\cite{mach17}}
+\end{figure}
 
-\tkzKiviatDiagram[scale=0.5,label distance=3cm,radial=12,gap=1,lattice=12]
-	{Distance To UE,Latency,Jitter,Computational Power,Storage Capacity}
-\tkzKiviatLine[ultra thick,color=green,mark=ball,mark size=4pt,
-               fill=green!20,opacity=.5](10.0,10.0,10.0,8.0,8.0)
-\tkzKiviatLine[ultra thick,color=red,mark=ball,mark size=4pt,
-               fill=red!20,opacity=.5](2.0,2.0,2.0,4.0,4.0) 
-\tkzKiviatGrad[prefix=,unity=1](1)  
-\end{tikzpicture}
+The above graph illustrates that MEC significantly improves on all the factors with respect to Cloud Computing.
