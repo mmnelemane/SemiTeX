@@ -1,0 +1,18 @@
+\section{Lessons Learned and Challenges}
+
+Edge Computing use-cases are enabled with the help of several other supporting technologies including virtualization, containerization, Cloud Computing, Network Function Virtualization. Standard bodies like ETSI NFV have produced detailed requirements and architectural framework to realize these use-cases. Open Source communities have come forward to build on these to develop source code that can be realistically deployed. Among the key players, OpenStack and Kubernetes are very popular.
+
+While OpenStack uses virtual machines as their fundamental entity, Kubernetes employs Containers and groups of containers called PODS. Both the projects provide extensive features through extensible modular architecture and also extensions to support specific requirements of NFV and Edge computing. Even though both are great projects with a very healthy community, the fundamental advantages of the Containers \cite{sharma16}, provides an edge to Kubernetes as an important choice and KubeEdge is already on the verge of realizing the goal of representing Kubernetes in the Edge Computing domain.
+
+The evolution of the ecosystem around virtualization and containerization has evolved edge computing from a mere content caching and computation offloading technology to a platform that can host services \cite{taleb17}. This new usecase presents different set of challenges. 
+
+\begin{enumerate}
+    \item \textit{Quality of Service}
+         High performance, low latency, highly available and resilient infrastructure is needed along with fault tolerance and management to achieve the standards of QoS requirements needed by most use-cases supported by Edge Computing. 
+    \item Service Mobility
+         Service Mobility requires transition of services from one base station to another with a quick response time specially in use-cases involving high speed mobility like vehicular communications. The migration of services also need to take care of the associated policy constraints and QoS agreements.
+    \item Security
+         The security mechanisms used in the regular data center applications may not be sufficient for services that run on distributed edge infrastructure specially when deployed in a very large scale.
+    \item Service Monetization
+         Edge computing does allow for third party services and monetization of services, but it also presents the challenges of isolation and conflict resolution among the participants which is still a concern.
+\end{enumerate}
