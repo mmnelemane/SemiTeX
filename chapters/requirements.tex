@@ -1,18 +1,22 @@
 \section{Requirements for NFV}
+\begin{flushleft}
 
 The variety of use-cases that NFV claims to support and the nature of the functions that run as VNFs demands for certain requirements to be met. ETSI has drafted several requirements and these can be classified under 4 categories. These requirements are laid out taking into consideration both the functioning of the NFV system as well as the Service Level Agreements (guarantees) that such a system is obligated to provide its consumers.
-	
+\end{flushleft}
+
+\newpage
 \subsection{Hardware requirements}
-
+\begin{flushleft}
 ETSI specifies considerations \cite{etsi04}  while choosing or adapting the telecommunications for NFV workloads. The environments include Central Office, Access Node, Transport Node and Data Center. Since majority of the NFV functions are expected to be implemented in the Data Center, the hardware requirements focuses on the requirements for the Data Center. One of the key goals is the ability to run Network Functions on COTS (Commercial Off The Shelf) hardware without vendor-locking and licensing issues. The second key consideration is interoperability so that workloads can be moved to different hardware automatically without performance or functionality impact. This is also necessary to achieve high level of resiliency. 
+\end{flushleft}
 
-	
 \subsection{Virtualization requirements}
 	
+\begin{flushleft}
 The network functions are expected to be run in one or more virtual resources. There are two competing technologies that help process the computation workloads for the VNFs – Virtualization and Containers. The nature of computation and traffic that is handled by NFV demands very high and deterministic performance. Its not sufficient to provide high speed but also real-time capability with reduced jitter. Jitter is defined as the deviation in the promised latency (the response time for the data processing unit).  
 	
 Operating the NFV system requires several actions to be performed on the virtualized resources (Virtual Machines or Containers). Hence these requirements dictate the metrics expected on various operations like below:
-
+\end{flushleft}
 
 \begin{enumerate}
     \item Inter-VM communication
